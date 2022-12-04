@@ -16,6 +16,9 @@
     "solve:2": "cd 2 && ./index.js \"$(cat input.txt)\"",
 
     "test:3": "cd 3 && ./index.js \"$(cat simple-example.txt)\"",
-    "solve:3": "cd 3 && ./index.js \"$(cat input.txt)\""
+    "solve:3": "cd 3 && ./index.js \"$(cat input.txt)\"",
+
+    "test:4": "cd 4 && ./index.js \"$(cat simple-example.txt)\"",
+    "solve:4": "cd 4 && ./index.js \"$(cat input.txt)\""
   }
 }
