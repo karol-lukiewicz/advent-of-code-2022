@@ -10,6 +10,9 @@
   },
   "scripts": {
     "test:1": "cd 1 && ./index.js \"$(cat simple-example.txt)\"",
-    "solve:1": "cd 1 && ./index.js \"$(cat input.txt)\""
+    "solve:1": "cd 1 && ./index.js \"$(cat input.txt)\"",
+
+    "test:2": "cd 2 && ./index.js \"$(cat simple-example.txt)\"",
+    "solve:2": "cd 2 && ./index.js \"$(cat input.txt)\""
   }
 }
