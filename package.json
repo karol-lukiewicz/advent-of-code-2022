@@ -30,6 +30,9 @@
     "test:7": "cd 7 && ./index.js \"$(cat simple-example.txt)\"",
     "solve:7": "cd 7 && ./index.js \"$(cat input.txt)\"",
 
+    "test:8": "cd 8 && ./index.js \"$(cat simple-example.txt)\"",
+    "solve:8": "cd 8 && ./index.js \"$(cat input.txt)\"",
+
     "test:9": "cd 9 && ./index.js \"$(cat simple-example.txt)\"",
     "test:complex:9": "cd 9 && ./index.js \"$(cat complex-example.txt)\"",
     "solve:9": "cd 9 && ./index.js \"$(cat input.txt)\""
