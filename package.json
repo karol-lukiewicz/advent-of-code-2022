@@ -39,6 +39,11 @@
 
     "test:10": "cd 10 && ./index.js \"$(cat simple-example.txt)\"",
     "test:complex:10": "cd 10 && ./index.js \"$(cat complex-example.txt)\"",
-    "solve:10": "cd 10 && ./index.js \"$(cat input.txt)\""
+    "solve:10": "cd 10 && ./index.js \"$(cat input.txt)\"",
+
+    "test:11": "cd 11 && ./index.js \"$(cat simple-example.txt)\"",
+    "solve:11": "cd 11 && ./index.js \"$(cat input.txt)\"",
+    "test:slim:11": "cd 11 && node ./index.slim.mjs \"$(cat simple-example.txt)\"",
+    "solve:slim:11": "cd 11 && node ./index.slim.mjs \"$(cat input.txt)\""
   }
 }
