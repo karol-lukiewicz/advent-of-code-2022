@@ -50,6 +50,9 @@
     "solve:12": "cd 12 && node ./index.mjs input.txt",
 
     "test:13": "node ./13/index.mjs 13/simple-example.txt",
-    "solve:13": "node ./13/index.mjs 13/input.txt"
+    "solve:13": "node ./13/index.mjs 13/input.txt",
+
+    "test:14": "node ./14/index.mjs 14/simple-example.txt",
+    "solve:14": "node ./14/index.mjs 14/input.txt"
   }
 }
