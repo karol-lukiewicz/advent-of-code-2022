@@ -9,6 +9,7 @@
     "url": "git+https://github.com/karol-lukiewicz/advent-of-code-2022.git"
   },
   "dependencies": {
+    "@dagrejs/graphlib": "^2.1.4",
     "core-js": "^3.26.1"
   },
   "scripts": {
@@ -49,8 +50,8 @@
     "test:slim:11": "cd 11 && node ./index.slim.mjs \"$(cat simple-example.txt)\"",
     "solve:slim:11": "cd 11 && node ./index.slim.mjs \"$(cat input.txt)\"",
 
-    "test:12": "cd 12 && node ./index.mjs simple-example.txt",
-    "solve:12": "cd 12 && node ./index.mjs input.txt",
+    "test:12": "node ./12/index.mjs ./12/simple-example.txt",
+    "solve:12": "node ./12/index.mjs ./12/input.txt",
 
     "test:13": "node ./13/index.mjs 13/simple-example.txt",
     "solve:13": "node ./13/index.mjs 13/input.txt",
