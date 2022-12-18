@@ -142,6 +142,20 @@ function simulateFallingRocks(rocks, winds, rocksToSimulate) {
                 // printChamber(chamber, "success")
             }
         }
+
+        // manual step of step 1 of part 2
+        if (false) {
+            if ([276, 277].includes(chamberTopIndex(chamber) + 1)) {
+                printRockPositionInChamber(rock)
+                console.log({rockNo})
+            }
+
+            if (chamberTopIndex(chamber) >= 2935) {
+                printRockPositionInChamber(rock)
+                console.log({rockNo})
+                process.exit();
+            }
+        }
     }
     return chamber;
 }
@@ -155,6 +169,61 @@ function day17(rocksTxt, windsTxt) {
     return chamberTopIndex(chamber) + 1;
 }
 
+function calculateTotalHeight(winds, rocks, totalRocksCount, rocksBeforePattern, heightBeforePattern, rocksInPattern, heightInPattern) {
+    const cycles = Math.floor((totalRocksCount - rocksBeforePattern) / rocksInPattern);
+    const rest = (totalRocksCount - rocksBeforePattern) % rocksInPattern;
+
+    if (rest === 0) {
+        return cycles * heightInPattern + heightBeforePattern;
+    }
+    const chamber = simulateFallingRocks(rocks, winds, rocksBeforePattern + rest);
+    const heightsOutOfFullPatterns = chamberTopIndex(chamber) + 1;
+    return cycles * heightInPattern + heightsOutOfFullPatterns;
+}
+
+function day17Part2(rocksTxt, windsTxt) {
+    const rocks = parseRocks(rocksTxt);
+    const winds = parseWinds(windsTxt);
+
+    // Assumption, rocks must fall in pattern, in worst cases it should be multiple of
+    // - number of rock kinds, 5
+    // - number of winds directions, ~40 for simple example, or ~10k for full solution
+    const totalRocksCount = 1_000_000_000_000;
+
+    // Step 1 - Find cyclical pattern
+    // Simulate 1M rocks and print how those rocks stack up into file (it should have ~15MB)
+    // node index.mjs rocks.txt simple-example.txt > simple-example.out
+    // node index.mjs rocks.txt input.txt > input.out
+    // open in text editor that can easily handle large files
+    // with editor search function find cycle, how log it is and when it begins
+    // Exact rock numbers could be found with additional runs with condition for specific height
+    if (true) {
+        let chamber = simulateFallingRocks(rocks, winds, 1_000_000);
+        printChamber(chamber);
+        return chamberTopIndex(chamber) + 1;
+    }
+
+    // Step2 - Found values insert into code
+    // simple-example.txt
+    if (true) {
+        // After first 15 rocks, with height 25, cyclical patter emerges.
+        // Cyclical patter has length og 35 rocks, starts with rock 16 and ends on rock 50, it has height 53.
+        const rocksBeforePattern = 15
+        const heightBeforePattern = 25
+        const rocksInPattern = 50 - rocksBeforePattern
+        const heightInPattern = 53
+        return calculateTotalHeight(winds, rocks, totalRocksCount, rocksBeforePattern, heightBeforePattern, rocksInPattern, heightInPattern);
+    }
+
+    // exampe.txt
+    if (true) {
+        const rocksBeforePattern = 175
+        const heightBeforePattern = 276
+        const rocksInPattern = 1905 - rocksBeforePattern
+        const heightInPattern = 2935 - heightBeforePattern
+        return calculateTotalHeight(winds, rocks, totalRocksCount, rocksBeforePattern, heightBeforePattern, rocksInPattern, heightInPattern);
+    }
+}
 
 let rocks, winds;
 try {
@@ -166,5 +235,5 @@ try {
 }
 console.log("Part1:");
 console.log(day17(rocks, winds));
-// console.log("Part2:");
-// console.log(day17Part2(rocks, winds));
+console.log("Part2:");
+console.log(day17Part2(rocks, winds));
