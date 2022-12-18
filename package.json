@@ -59,6 +59,9 @@
     "solve:15": "node ./15/index.mjs 15/input.txt 2000000 4000000",
 
     "test:16": "node ./16/index.mjs 16/simple-example.txt",
-    "solve:16": "node ./16/index.mjs 16/input.txt"
+    "solve:16": "node ./16/index.mjs 16/input.txt",
+
+    "test:17": "node ./17/index.mjs 17/rocks.txt 17/simple-example.txt",
+    "solve:17": "node ./17/index.mjs 17/rocks.txt 17/input.txt"
   }
 }
