@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/karol-lukiewicz/advent-of-code-2022.git"
   },
+  "dependencies": {
+    "core-js": "^3.26.1"
+  },
   "scripts": {
     "test:1": "cd 1 && ./index.js \"$(cat simple-example.txt)\"",
     "solve:1": "cd 1 && ./index.js \"$(cat input.txt)\"",
