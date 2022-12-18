@@ -65,6 +65,9 @@
     "solve:16": "node ./16/index.mjs 16/input.txt",
 
     "test:17": "node ./17/index.mjs 17/rocks.txt 17/simple-example.txt",
-    "solve:17": "node ./17/index.mjs 17/rocks.txt 17/input.txt"
+    "solve:17": "node ./17/index.mjs 17/rocks.txt 17/input.txt",
+
+    "test:18": "node ./18/index.mjs 18/simple-example.txt",
+    "solve:18": "node ./18/index.mjs 18/input.txt"
   }
 }
